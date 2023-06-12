@@ -30,7 +30,7 @@ public class MailHandler {
         try {
             mailMessage.setFrom(MailMetaData.myUserMail);
             mailMessage.setSubject("This is my java code testing");
-            mailMessage.setText("Hey this is Mainak who is trying to send mail using java");
+            mailMessage.setText("Hi this is Bablu Yadav who is trying to send mail using java");
 
             //set the receiver
 
