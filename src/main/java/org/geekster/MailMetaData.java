@@ -7,11 +7,11 @@ public class MailMetaData {
     public static final String sslProperty = "mail.smtp.ssl.enable";
     public static final String authPerm = "mail.smtp.auth";
 
-    public static final String myUserMail = "mainakgh1@gmail.com";
+    public static final String myUserMail = "kumarbablu5598@gmail.com";
 
     public static final String password = "uehepfbntlahrmra";// app password
 
-    public static final String receiverMail = "ravilohar896@gmail.com";
+    public static final String receiverMail = "kumarbk@gmail.com";
 
 
 }
