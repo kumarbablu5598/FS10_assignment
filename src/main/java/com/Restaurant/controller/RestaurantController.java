@@ -31,9 +31,9 @@ public class RestaurantController {
         restaurantservice.updateById(Id,restaurant);
     }
 
-    @DeleteMapping("deletebyid/{Id}")
-    public  void  deletebyid(@PathVariable int Id){
-        restaurantservice.deleteById(Id);
+    @DeleteMapping("deletebyid/{id}")
+    public  void  deletebyid(@PathVariable int id){
+        restaurantservice.deleteById(id);
     }
 
 }

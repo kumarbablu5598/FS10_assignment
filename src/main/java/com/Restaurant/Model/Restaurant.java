@@ -8,9 +8,9 @@ public class Restaurant {
     private String Specialty;
     private int totalStaff;
 
-    public Restaurant() {
-
-    }
+//    public Restaurant() {
+//
+//    }
 
     public Restaurant(int restaurantId, String restaurantName, String restaurantAddress, String restaurantNumber, String specialty, int totalStaff) {
         RestaurantId = restaurantId;
@@ -22,26 +22,32 @@ public class Restaurant {
     }
 
     public int getRestaurantId() {
+
         return RestaurantId;
     }
 
-    public void setRestaurantId(int restaurantId) {
+    public void setRestaurantId(int restaurantId)
+    {
         RestaurantId = restaurantId;
     }
 
     public String getRestaurantName() {
+
         return RestaurantName;
     }
 
-    public void setRestaurantName(String restaurantName) {
+    public void setRestaurantName(String restaurantName)
+    {
         RestaurantName = restaurantName;
     }
 
     public String getRestaurantAddress() {
+
         return RestaurantAddress;
     }
 
     public void setRestaurantAddress(String restaurantAddress) {
+
         RestaurantAddress = restaurantAddress;
     }
 
@@ -50,6 +56,7 @@ public class Restaurant {
     }
 
     public void setRestaurantNumber(String restaurantNumber) {
+
         RestaurantNumber = restaurantNumber;
     }
 
@@ -58,6 +65,7 @@ public class Restaurant {
     }
 
     public void setSpecialty(String specialty) {
+
         Specialty = specialty;
     }
 
