@@ -25,7 +25,7 @@ public class RestaurantController {
     public void addRestaurant (@RequestBody Restaurant restaurant) {
           restaurantservice.addHotel(restaurant);
     }
-    @PostMapping("update/{Id}")
+    @PutMapping("update/{Id}")
     public  void  updateById(@PathVariable int Id,@RequestBody Restaurant restaurant)
     {
         restaurantservice.updateById(Id,restaurant);
