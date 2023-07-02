@@ -9,13 +9,13 @@
 
 ### Data Flow 
 * Controller :
-    * In this Application two Controllers class one is StudentController and second one is EventController
+    * In this Application one Controller  class , JobController.
 * Model :
-    * In this Application two Models class one is Students  and second one is Events
+    * In this Application one Model , Job model one is Enum Jobtype.
 * Service
-  * In this Application two Serivce class one is StudentSerivce and second one is EventSerivce.
+  * In this Application one Serivce class it is JobSerivce.
 * Repository
-  * In this Application two Repository class one is IStudentRepo and second one is IEventRepo.
+  * In this Application one Repository Interface,JobRepo
 * Database
   * I used H2 Database In this Application And Created data.sql file to upload data in table at the start of Application.
 * Util Class
@@ -23,33 +23,28 @@
 
 ### Project Summery
 
-University Event Management application is RESTAPI Application in this you can fetch the data of all Students and find Event By Date , created two seperate models one is of Students and one is Event. You can go through the Code to do the CRUD Commands to add delete update aur get the data of Students and Event. You can also use H2-Database to see the table we have created in the database and to get the data of table.
+Job Search Portal is RESTAPI Application in this you can fetch the data of all jobs and find job  By Id , created one model Job and one Enum for JobType  . You can go through the Code to do the CRUD Commands to add delete update aur get the data of jobs. You can also use H2-Database to see the table we have created in the database and to get the data of table.
 
 # Links
 
 ### links of Mappings and endpoints.
 
-    addStudents/addEvent
-        PostMapping-http://localhost:8080/api/students/addstudent
-        PostMapping-http://localhost:8080/api/events/addevent
-     
-    Get Students by Id / Get Events by Id
-        GetMapping-http://localhost:8080/api/students/getstudent/2
-        GetMapping-http://localhost:8080/api/events/getevent/1
+    addjobs/addjob
+        PostMapping- http://localhost:8080/api/addjob
+        PostMapping- http://localhost:8080/api/addjobs
+    Get job by Id
+        GetMapping- http://localhost:8080/api/job/2
+       
+    Get all jobs
+        GetMapping- http://localhost:8080/api/getalljobs
     
-    Get all Students/ Get all Events
-        GetMapping-http://localhost:8080/api/students/getallstudent
-        GetMapping-http://localhost:8080/api/events/getallevent
+    update job By Id
+       PutMapping- http://localhost:8080/api/update/2
     
-    updateStudent/updateEvent
-       PutMapping-http://localhost:8080/api/students/updateStudent/1
-       PutMapping-http://localhost:8080/api/events/updateEvent/1
-    
-    deleteStudent/deleteEvent
-       DeleteMapping-http://localhost:8080/api/students/deleteStudent/1
-       DeleteMapping-http://localhost:8080/api/events/deleteEvent/1
+    delete Job By Id
+       DeleteMapping- http://localhost:8080/api/delete/1
       
  
  
 
-# FS10_assignment
+ 
