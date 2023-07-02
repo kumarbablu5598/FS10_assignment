@@ -19,10 +19,10 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer StudentId;
-   @Pattern(regexp = "[A-Z][a-zA-Z]*")
+    @Pattern(regexp = "^[A-z][a-z0-9_-]{3,19}$")
     private String FirstName;
-   @Pattern(regexp = "[A-Z][a-zA-Z]*")
-    private String Lastname;
+    @Pattern(regexp = "^[A-z][a-z0-9_-]{3,19}$")
+    private String LastName;
     @Min(value=10)
     @Max(value = 25)
     private Integer age;

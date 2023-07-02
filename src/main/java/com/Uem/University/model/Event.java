@@ -20,7 +20,7 @@ public class Event {
     private Integer EventId;
     private String EventName;
     private String LocationOfEvent;
-    private LocalDate EvenDdate;
+    private LocalDate Eventdate;
     private LocalDateTime StartTime;
     private LocalDateTime EndTime;
 

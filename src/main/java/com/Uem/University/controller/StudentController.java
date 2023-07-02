@@ -18,7 +18,7 @@ public class StudentController {
     public Iterable<Student> getallStudents(){
         return  studentService.getallStudents();
     }
-    @GetMapping("getstudent{Id}")
+    @GetMapping("getstudent/{Id}")
     public Student getStudentById(@PathVariable  Integer Id){
         return studentService.getStudentById(Id);
     }
@@ -31,15 +31,15 @@ public class StudentController {
         return studentService.addstudents(students);
     }
     @DeleteMapping("delete/{Id}")
-    public  void deletestudentById(@PathVariable Integer Id){
-        studentService.deletestudentById(Id);
+    public  String deletestudentById(@PathVariable Integer Id){
+        return studentService.deletestudentById(Id);
     }
     @PutMapping("update/{Id}")
-    public void updateById(@RequestBody Student student,@PathVariable Integer Id){
-        studentService.updateById(student,Id);
+    public String updateById(@RequestBody Student student,@PathVariable Integer Id){
+        return  studentService.updateById(student,Id);
     }
     @PutMapping("update/department/{department}")
-    public void updateByDepartment(@RequestBody Student student, @PathVariable Department department){
-        studentService.updateByDepartment(student,department);
+    public String  updateByDepartment(@PathVariable Department department,@RequestBody Student student){
+       return studentService.updateByDepartment(student,department);
     }
 }

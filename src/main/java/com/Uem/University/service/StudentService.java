@@ -3,6 +3,7 @@ package com.Uem.University.service;
 import com.Uem.University.model.Department;
 import com.Uem.University.model.Student;
 import com.Uem.University.repository.StudentRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,38 +21,50 @@ public class StudentService {
     }
 
     public Student getStudentById(Integer Id){
-        Optional<Student> optionalStudent = studentRepo.findById(Id);
-        return optionalStudent.get();
+//        Optional<Student> optionalStudent = studentRepo.findById(Id);
+//        return optionalStudent.get();
+        //OR
+         return studentRepo.findById(Id).get();
 
     }
     public String addStudent(Student student){
         studentRepo.save(student);
-        return "added";
+        return "added student";
     }
     public String addstudents(List<Student> students){
         studentRepo.saveAll(students);
-        return "added";
+        return "added list of students";
     }
-    public  void deletestudentById(Integer Id){
+    public  String deletestudentById(Integer Id){
         studentRepo.deleteById(Id);
+        return "deleted Id "+ Id;
     }
-    public  void updateById(Student student,Integer Id){
-        Student updatestudent = getStudentById(Id);
+    public  String updateById(Student student,Integer Id){
+        //Student updatestudent = getStudentById(Id);
+        Student updatestudent = studentRepo.findById(Id).get();
         updatestudent.setAge(student.getAge());
         updatestudent.setDepartment(student.getDepartment());
         updatestudent.setFirstName(student.getFirstName());
-        updatestudent.setLastname(student.getLastname());
+        updatestudent.setLastName(student.getLastName());
+       // studentRepo.save(updatestudent);
+        if(updatestudent!=null) return  "updated "+Id;
+        else   return  "unable to update";
 
     }
-    public void updateByDepartment(Student student, Department department){
+    public String  updateByDepartment(Student student, Department department){
         Iterable<Student> students = getallStudents();
-        for(Student stu : students){
-            if(stu.getDepartment().equals(department)){
+        for(Student stu : students)
+        {
+            if(stu.getDepartment().equals(department))
+            {
                 stu.setStudentId(student.getStudentId());
                 stu.setAge(student.getAge());
-                stu.setLastname(student.getLastname());
+                stu.setLastName(student.getLastName());
                 stu.setFirstName(student.getFirstName());
+               // studentRepo.save(stu);
+                return "update Department " + department;
             }
         }
+        return  "unable to update";
     }
 }
