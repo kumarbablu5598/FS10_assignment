@@ -5,7 +5,11 @@ import com.Uem.University.repository.EventRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EventService {
@@ -17,7 +21,11 @@ public class EventService {
         return eventRepo.findAll();
     }
    public  Event getEventById(Integer Id){
-        return eventRepo.findById(Id).get();
+       Optional<Event> optionalEvent= eventRepo.findById(Id);
+       Event event =null;
+       if(optionalEvent.isPresent())
+        event=optionalEvent.get();
+       return  event;
    }
 
    public String addEvent(Event event){
@@ -34,12 +42,26 @@ public class EventService {
    }
    public  String updeteById(Integer id,Event event){
         Event ev = getEventById(id);
-        ev.setEndTime(event.getEndTime());
-        ev.setEventName(event.getEventName());
-        ev.setLocationOfEvent(event.getLocationOfEvent());
-        ev.setStartTime(event.getStartTime());
-        ev.setEventdate(event.getEventdate());
-        if(ev!=null) return "updated "+id;
-        else return  "unable to update ";
+        if(ev!=null){
+            ev.setEndTime(event.getEndTime());
+            ev.setEventName(event.getEventName());
+            ev.setLocationOfEvent(event.getLocationOfEvent());
+            ev.setStartTime(event.getStartTime());
+            ev.setEventdate(event.getEventdate());
+            eventRepo.save(ev);
+            return "updated "+id;
+        }
+         return  "unable to update ";
+   }
+
+   public List<Event> getAllEventByDate( LocalDate date){
+        Iterable<Event> events = getAllevent();
+        List<Event> newevents = new ArrayList<>();
+        for(Event ev : events){
+            if(ev.getEventdate().equals(date))
+                newevents.add(ev);
+        }
+        return  newevents;
+
    }
 }

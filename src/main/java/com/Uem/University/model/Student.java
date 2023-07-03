@@ -23,7 +23,7 @@ public class Student {
     private String FirstName;
     @Pattern(regexp = "^[A-z][a-z0-9_-]{3,19}$")
     private String LastName;
-    @Min(value=10)
+    @Min(value=18)
     @Max(value = 25)
     private Integer age;
     private Department department;

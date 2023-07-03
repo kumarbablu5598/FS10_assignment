@@ -21,10 +21,12 @@ public class StudentService {
     }
 
     public Student getStudentById(Integer Id){
-//        Optional<Student> optionalStudent = studentRepo.findById(Id);
-//        return optionalStudent.get();
-        //OR
-         return studentRepo.findById(Id).get();
+        Optional<Student> optionalStudent = studentRepo.findById(Id);
+        Student stu=null;
+        if(optionalStudent.isPresent())
+            stu=optionalStudent.get();
+
+        return stu;
 
     }
     public String addStudent(Student student){
@@ -40,15 +42,17 @@ public class StudentService {
         return "deleted Id "+ Id;
     }
     public  String updateById(Student student,Integer Id){
-        //Student updatestudent = getStudentById(Id);
-        Student updatestudent = studentRepo.findById(Id).get();
-        updatestudent.setAge(student.getAge());
-        updatestudent.setDepartment(student.getDepartment());
-        updatestudent.setFirstName(student.getFirstName());
-        updatestudent.setLastName(student.getLastName());
-       // studentRepo.save(updatestudent);
-        if(updatestudent!=null) return  "updated "+Id;
-        else   return  "unable to update";
+        Student updatestudent = getStudentById(Id);
+        //Student updatestudent = studentRepo.findById(Id).get();
+        if(updatestudent!=null){
+            updatestudent.setAge(student.getAge());
+            updatestudent.setDepartment(student.getDepartment());
+            updatestudent.setFirstName(student.getFirstName());
+            updatestudent.setLastName(student.getLastName());
+            studentRepo.save(updatestudent);
+            return  "updated "+Id;
+        }
+       return  "unable to update";
 
     }
     public String  updateByDepartment(Student student, Department department){
@@ -61,7 +65,7 @@ public class StudentService {
                 stu.setAge(student.getAge());
                 stu.setLastName(student.getLastName());
                 stu.setFirstName(student.getFirstName());
-               // studentRepo.save(stu);
+                studentRepo.save(stu);
                 return "update Department " + department;
             }
         }
