@@ -17,11 +17,11 @@ import java.time.LocalDateTime;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer EventId;
-    private String EventName;
-    private String LocationOfEvent;
-    private LocalDate Eventdate;
-    private LocalDateTime StartTime;
-    private LocalDateTime EndTime;
+    private Integer eventId;
+    private String eventName;
+    private String locationOfEvent;
+    private LocalDate eventDate;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
 
 }

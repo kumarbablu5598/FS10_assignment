@@ -47,7 +47,7 @@ public class EventService {
             ev.setEventName(event.getEventName());
             ev.setLocationOfEvent(event.getLocationOfEvent());
             ev.setStartTime(event.getStartTime());
-            ev.setEventdate(event.getEventdate());
+            ev.setEventDate(event.getEventDate());
             eventRepo.save(ev);
             return "updated "+id;
         }
@@ -55,13 +55,14 @@ public class EventService {
    }
 
    public List<Event> getAllEventByDate( LocalDate date){
-        Iterable<Event> events = getAllevent();
-        List<Event> newevents = new ArrayList<>();
-        for(Event ev : events){
-            if(ev.getEventdate().equals(date))
-                newevents.add(ev);
-        }
-        return  newevents;
+//        Iterable<Event> events = getAllevent();
+//        List<Event> newevents = new ArrayList<>();
+//        for(Event ev : events){
+//            if(ev.getEventdate().equals(date))
+//                newevents.add(ev);
+//        }
+//        return  newevents;
+       return eventRepo.findByEventDate(date);
 
    }
 }
