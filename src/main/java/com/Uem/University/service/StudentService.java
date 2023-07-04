@@ -4,6 +4,7 @@ import com.Uem.University.model.Department;
 import com.Uem.University.model.Student;
 import com.Uem.University.repository.StudentRepo;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,20 +56,20 @@ public class StudentService {
        return  "unable to update";
 
     }
-    public String  updateByDepartment(Student student, Department department){
-        Iterable<Student> students = getallStudents();
-        for(Student stu : students)
-        {
-            if(stu.getDepartment().equals(department))
-            {
-                stu.setStudentId(student.getStudentId());
-                stu.setAge(student.getAge());
-                stu.setLastName(student.getLastName());
-                stu.setFirstName(student.getFirstName());
-                studentRepo.save(stu);
-                return "update Department " + department;
-            }
-        }
-        return  "unable to update";
-    }
+    // geting student by department
+       public String  updateByDepartment(Student student, Department department) {
+           Student stu = studentRepo.findFirstByDepartment(department);
+           stu.setFirstName(student.getFirstName());
+           stu.setLastName(student.getLastName());
+           stu.setAge(student.getAge());
+           stu.setStudentId(student.getStudentId());
+
+           studentRepo.save(stu);
+
+           return "updated :"+ department;
+
+
+
+}
+
 }
