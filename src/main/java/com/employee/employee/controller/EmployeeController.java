@@ -37,7 +37,7 @@ public class EmployeeController {
         return employeeService.deleteById(Id);
     }
     @PutMapping("update/{Id}")
-    public String updateById(@RequestBody Employee employee,Long Id){
+    public String updateById(@RequestBody Employee employee, @PathVariable Long Id){
         return employeeService.updatebyId(employee,Id);
     }
 

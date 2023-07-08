@@ -36,7 +36,7 @@ public class AddressController {
         return addressService.deleteById(Id);
     }
     @PutMapping("update/{Id}")
-    public String updateById(@RequestBody Address address,Long Id){
+    public String updateById(@RequestBody Address address,@PathVariable Long Id){
         return addressService.update(address,Id);
     }
 
