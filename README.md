@@ -41,12 +41,14 @@ Restaurant management API application is RESTAPI Application in this you can fet
         PostMapping- http://localhost:8080/api/orders/addorder
         PostMapping- http://localhost:8080/api/foodItem/addfoodItem
          
-   Get all FoodItems/Get all Orders/ Get all Users
+    
+    Get all FoodItems/Get all Orders/ Get all Users
         GetMapping- http://localhost:8080/api/user/getAll
         GetMapping- http://localhost:8080/api/orders/getAll
         GetMapping- http://localhost:8080/api/foodItem/getAll
        
-   deleteFoodItems/deleteUser/deleteOrder
+    
+    deleteFoodItems/deleteUser/deleteOrder
        DeleteMapping- http://localhost:8080/api/user/delete/1
        DeleteMapping- http://localhost:8080/api/orders/delete/1
        DeleteMapping- http://localhost:8080/api/foodItem/delete/1
