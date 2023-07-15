@@ -14,7 +14,8 @@ public class FoodItemService {
     public List<FoodItem> getAllFood(){
         return iFoodItemRepo.findAll();
     }
-    public  void AddFoodItem(FoodItem foodItem){
+    public  String AddFoodItem(FoodItem foodItem){
         iFoodItemRepo.save(foodItem);
+        return "food added";
     }
 }
