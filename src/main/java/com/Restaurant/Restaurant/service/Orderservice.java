@@ -3,9 +3,10 @@ package com.Restaurant.Restaurant.service;
 import com.Restaurant.Restaurant.models.Orders;
 import com.Restaurant.Restaurant.repository.IOrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class Orderservice {
     @Autowired
     IOrderRepo iOrderRepo;
