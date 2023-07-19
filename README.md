@@ -10,13 +10,15 @@
 
 ### Data Flow 
 * Controller :
-    * In this Application 4 Controllers class   AddressController,ProductController,OrderController and UserController
+    * In this Application 4 Controllers class   AdminController,DoctorController,PatientController and AppointmentController
 * Model :
-    * In this Application 4 Models class User,Product,Order and Address
+    * In this Application 5 Models class Admin,Doctor,Patient , Appointment and AuthenticationToken.
+* DTO :
+    * In this Application 2 class SignInInput and SignUpOutput
 * Service
-  * In this Application 4 Serivce class AddressSerivce,ProductSerivce,OrderSerivce and UserSerivce.
+  * In this Application 5 Serivce class AdminSerivce,DoctorSerivce,PatientSerivce , AppointmentSerivce and AuthenticationTokenSerivce.
 * Repository
-  * In this Application 4 Repository class AddressRepo,ProductRepo,OrderRepo and UserRepo.
+  * In this Application 5 Repository class AdminRepo,DoctorRepo,PatientRepo , AppointmentRepo and AuthenticationTokenRepo.
 * Database
   * I used mysql Database In this Application And Created data.sql file to upload data in table at the start of Application.
 * Util Class
@@ -31,32 +33,17 @@ http://localhost:8080/swagger-ui/index.html
 
 The Springboot Doctor Application is a web-based application built using the Spring Boot framework. It provides a platform for doctors and medical professionals to manage patient information, appointments, and medical records in a convenient and efficient manner.
 
-# Links
+# Features
+The application includes the following features:
+### User Authentication:-
+Doctors can register and log in to the system using their credentials. Authentication is implemented using Spring Security, ensuring secure access to the application.
+### Patient Management:-
+Doctors can create, update, and view patient profiles. Each patient profile includes personal information, medical history, and contact details. Doctors can easily search for patients and access their information.
+### Appointment Scheduling:-
+Doctors can manage appointments by creating, updating, and canceling appointments. The application provides a calendar view for easy visualization of upcoming appointments. Doctors can also receive notifications or reminders for upcoming appointments.
+### Medical Records:-
+Doctors can maintain and update medical records for each patient. They can add diagnosis details, treatment plans, prescriptions, and other relevant information. Medical records are securely stored and can be accessed whenever needed.
+### Communication and Messaging:-
+Doctors can communicate with patients through the application using messaging or email features. This facilitates easy and secure communication, allowing doctors to share important information or follow-up instructions.
 
-### links of Mappings and endpoints.
-
-    addAddress/addProduct/addOrder/addUser
-        PostMapping- http://localhost:8080/api/address/addaddress
-        PostMapping- http://localhost:8080/api/order/addorder
-        PostMapping- http://localhost:8080/api/product/addproduct
-        PostMapping- http://localhost:8080/api/user/adduser
-     
-    Get Address by Id / Get Product by Id/ Get Order by Id / Get User by Id
-        GetMapping- http://localhost:8080/api/address/getbyid/1
-        GetMapping- http://localhost:8080/api/order/getbyid/1
-        GetMapping- http://localhost:8080/api/product/getbyId/1
-        GetMapping- http://localhost:8080/api/user/getbyId/1
-    
-    Get all Address/ Get all Products/Get all Orders/ Get all Users
-        GetMapping- http://localhost:8080/api/address/getAll
-        GetMapping- http://localhost:8080/api/order/getAll
-        GetMapping- http://localhost:8080/api/product/getAll
-        GetMapping- http://localhost:8080/api/user/getAll
-    
-    
-    deleteAddress/deleteUser/deleteProduct/deleteOrder
-       DeleteMapping- http://localhost:8080/api/address/delete/1
-       DeleteMapping- http://localhost:8080/api/order/delete/1
-       DeleteMapping- http://localhost:8080/api/product/delete/1
-       DeleteMapping- http://localhost:8080/api/user/delete/1
-      
+ 
